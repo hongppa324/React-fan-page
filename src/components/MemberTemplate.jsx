@@ -9,16 +9,16 @@ function MemberTemplate() {
   const [memberId, setMemberId] = useState(MEMBERS[0].englishName);
   const [messages, setMessages] = useLocalStorage("message", []);
 
-  const handleUpdate = (member) => setMemberId(member);
-  const handleAdd = (message) => {
+  const updateHandler = (member) => setMemberId(member);
+  const addHandler = (message) => {
     setMessages((prev) => [...prev, message]);
   };
 
   return (
     <>
-      <Member memberId={memberId} onUpdate={handleUpdate} />
+      <Member memberId={memberId} updateHandler={updateHandler} />
       <Letter memberId={memberId} messages={messages} />
-      <AddLetter memberId={memberId} handleAdd={handleAdd} />
+      <AddLetter memberId={memberId} addHandler={addHandler} />
     </>
   );
 }

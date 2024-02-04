@@ -2,8 +2,8 @@ import React from "react";
 import { COLORS } from "common/colors";
 import styled from "styled-components";
 
-function MemberList({ children: name, id, clicked, onUpdate }) {
-  const selectMember = () => onUpdate(id);
+function MemberList({ children: name, id, clicked, updateHandler }) {
+  const selectMember = () => updateHandler(id);
 
   return (
     <StMemberList onClick={selectMember} $clicked={clicked}>
