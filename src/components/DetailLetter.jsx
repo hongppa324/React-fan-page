@@ -18,7 +18,7 @@ function DetailLetter({ id, messages, setMessages }) {
     }
 
     if (content === editContent) {
-      window.alert("변경 사항이 없습니다.");
+      window.alert("수정 사항이 없습니다.");
       setIsEdit((prev) => !prev);
       return;
     }
