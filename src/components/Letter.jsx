@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { MEMBERS } from "common/member";
 import LetterItem from "components/LetterItem";
 import { COLORS } from "common/colors";
 import styled from "styled-components";
-import { LettersContext } from "shared/context/FanPageContext";
 
 function Letter({ memberId, messages }) {
   const memberData = MEMBERS.filter(
@@ -14,32 +13,30 @@ function Letter({ memberId, messages }) {
   );
 
   return (
-    <LettersContext.Provider>
-      <StLetter>
-        <h3>To. {memberData.englishName}</h3>
-        {!!filteredData[0] || (
-          <EmptyLetter>
-            <strong>
-              {memberData.englishName}에게 첫 번째 메시지를 남기는 주인공이
-              되어주세요!
-            </strong>
-          </EmptyLetter>
-        )}
-        {filteredData?.map((item) => {
-          const { nickname, content, writedTo, createdAt, id } = item;
-          return (
-            <LetterItem
-              nickname={nickname}
-              content={content}
-              writedTo={writedTo}
-              createdAt={createdAt}
-              id={id}
-              key={id}
-            />
-          );
-        })}
-      </StLetter>
-    </LettersContext.Provider>
+    <StLetter>
+      <h3>To. {memberData.englishName}</h3>
+      {!!filteredData[0] || (
+        <EmptyLetter>
+          <strong>
+            {memberData.englishName}에게 첫 번째 메시지를 남기는 주인공이
+            되어주세요!
+          </strong>
+        </EmptyLetter>
+      )}
+      {filteredData?.map((item) => {
+        const { nickname, content, writedTo, createdAt, id } = item;
+        return (
+          <LetterItem
+            nickname={nickname}
+            content={content}
+            writedTo={writedTo}
+            createdAt={createdAt}
+            id={id}
+            key={id}
+          />
+        );
+      })}
+    </StLetter>
   );
 }
 export default Letter;
