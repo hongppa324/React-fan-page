@@ -4,7 +4,7 @@ import { MEMBERS } from "common/member";
 import styled from "styled-components";
 import { COLORS } from "common/colors";
 
-function Member({ memberId, onUpdate }) {
+function Member({ memberId, updateHandler }) {
   return (
     <StSection>
       <h2>MEMBER</h2>
@@ -14,7 +14,7 @@ function Member({ memberId, onUpdate }) {
             key={member.id}
             id={member.englishName}
             clicked={member.englishName === memberId}
-            onUpdate={onUpdate}
+            updateHandler={updateHandler}
           >
             {member.englishName}
           </MemberList>
