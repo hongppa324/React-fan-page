@@ -1,4 +1,4 @@
-import App from "../App";
+import App from "App";
 import Home from "pages/Home";
 import Detail from "pages/Detail";
 import NotFound from "pages/NotFound";
