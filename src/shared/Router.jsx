@@ -1,13 +1,13 @@
-import App from './App';
-import Home from 'pages/Home';
-import Detail from 'pages/Detail';
-import NotFound from 'pages/NotFound';
-import { createBrowserRouter } from 'react-router-dom';
+import App from "../App";
+import Home from "pages/Home";
+import Detail from "pages/Detail";
+import NotFound from "pages/NotFound";
+import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter(
   [
     {
-      path: '/',
+      path: "/",
       element: <App />,
       errorElement: <NotFound />,
       children: [
@@ -16,11 +16,11 @@ export const router = createBrowserRouter(
           element: <Home />,
         },
         {
-          path: 'detail/:id',
+          path: "detail/:id",
           element: <Detail />,
         },
       ],
     },
   ],
-  { basename: '/' },
+  { basename: "/" }
 );
