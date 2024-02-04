@@ -16,7 +16,9 @@ function LetterItem({ nickname, content, createdAt, id }) {
             <span>{timestampWindow(createdAt)}</span>
           </div>
           <div>
-            <p title={content}>{content}</p>
+            <p title={content}>
+              {content.length > 40 ? `${content.slice(0, 40)}...` : content}
+            </p>
           </div>
         </LetterInfo>
       </Link>
