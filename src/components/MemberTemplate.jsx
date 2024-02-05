@@ -5,6 +5,8 @@ import { MEMBERS } from "common/member";
 import AddLetter from "components/AddLetter";
 import useLocalStorage from "common/useLocalStorage";
 import { LettersContext } from "context/FanPageContext";
+import { Provider } from "react-redux";
+import store from "../redux/config/configStore";
 
 function MemberTemplate() {
   const [memberId, setMemberId] = useState(MEMBERS[0].englishName);

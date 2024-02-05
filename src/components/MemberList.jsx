@@ -1,14 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import { COLORS } from "common/colors";
 import styled from "styled-components";
-import { LettersContext } from "context/FanPageContext";
+import { useMemberId } from "common/useMemberId";
 
 function MemberList({ children: name, id }) {
-  const { memberId, updateHandler } = useContext(LettersContext);
-  const selectMember = () => updateHandler(id);
+  const [memberId, setMemberId] = useMemberId(name);
+
+  const updateHandler = () => setMemberId(name);
 
   return (
-    <StMemberList onClick={selectMember} $clicked={name === memberId}>
+    <StMemberList onClick={updateHandler} $clicked={name === memberId}>
       <div>
         <img src={require(`assets/${name}.jpg`)} alt={name} />
         <p>{name}</p>
