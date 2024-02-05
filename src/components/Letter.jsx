@@ -1,15 +1,17 @@
-import React from "react";
-import { MEMBERS } from "common/member";
+import React, { useContext } from "react";
 import LetterItem from "components/LetterItem";
+import { MEMBERS } from "common/member";
 import { COLORS } from "common/colors";
 import styled from "styled-components";
+import { LettersContext } from "context/FanPageContext";
 
-function Letter({ memberId, messages }) {
+function Letter() {
+  const { memberId, messages } = useContext(LettersContext);
   const memberData = MEMBERS.filter(
     (member) => member.englishName === memberId
   )[0];
   const filteredData = messages?.filter(
-    (v) => v.writedTo === memberData.englishName
+    (message) => message.writedTo === memberData.englishName
   );
 
   return (

@@ -4,7 +4,7 @@ import { MEMBERS } from "common/member";
 import styled from "styled-components";
 import { COLORS } from "common/colors";
 
-function Member({ memberId, updateHandler }) {
+function Member({ memberId, updateHandler, clicked }) {
   return (
     <StSection>
       <h2>MEMBER</h2>

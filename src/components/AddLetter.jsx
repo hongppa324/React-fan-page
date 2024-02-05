@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import defaultImg from "assets/defaultUser.jpg";
 import { MEMBERS } from "common/member";
+import { COLORS } from "common/colors";
 import { v4 as uuid } from "uuid";
 import styled from "styled-components";
-import { COLORS } from "common/colors";
+import { LettersContext } from "context/FanPageContext";
 
-function AddLetter({ memberId, handleAdd }) {
+function AddLetter() {
+  const { memberId, addHandler } = useContext(LettersContext);
   const member = MEMBERS.filter((member) => memberId === member.englishName)[0];
 
   const [message, setMessage] = useState({
@@ -26,7 +28,7 @@ function AddLetter({ memberId, handleAdd }) {
       return;
     }
 
-    handleAdd(message);
+    addHandler(message);
     setMessage({ nickname: "", content: "" });
   };
 

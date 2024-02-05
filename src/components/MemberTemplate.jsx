@@ -4,6 +4,7 @@ import Letter from "components/Letter";
 import { MEMBERS } from "common/member";
 import AddLetter from "components/AddLetter";
 import useLocalStorage from "common/useLocalStorage";
+import { LettersContext } from "context/FanPageContext";
 
 function MemberTemplate() {
   const [memberId, setMemberId] = useState(MEMBERS[0].englishName);
@@ -16,9 +17,13 @@ function MemberTemplate() {
 
   return (
     <>
-      <Member memberId={memberId} updateHandler={updateHandler} />
-      <Letter memberId={memberId} messages={messages} />
-      <AddLetter memberId={memberId} addHandler={addHandler} />
+      <LettersContext.Provider
+        value={{ memberId, messages, updateHandler, addHandler }}
+      >
+        <Member />
+        <Letter />
+        <AddLetter />
+      </LettersContext.Provider>
     </>
   );
 }

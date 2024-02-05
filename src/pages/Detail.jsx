@@ -3,6 +3,7 @@ import Header from "components/Header";
 import DetailLetter from "components/DetailLetter";
 import useLocalStorage from "common/useLocalStorage";
 import { useParams } from "react-router-dom";
+import { DetailsContext } from "context/FanPageContext";
 
 export default function Detail() {
   const { id } = useParams();
@@ -11,7 +12,9 @@ export default function Detail() {
   return (
     <>
       <Header />
-      <DetailLetter id={id} messages={messages} setMessages={setMessages} />;
+      <DetailsContext.Provider value={{ id, messages, setMessages }}>
+        <DetailLetter />;
+      </DetailsContext.Provider>
     </>
   );
 }

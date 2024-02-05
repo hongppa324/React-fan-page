@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DetailLetterItem from "components/DetailLetterItem";
 import styled from "styled-components";
+import { DetailsContext } from "context/FanPageContext";
 
-function DetailLetter({ id, messages, setMessages }) {
+function DetailLetter() {
+  const { id, messages, setMessages } = useContext(DetailsContext);
   const { nickname, content, createdAt, writedTo } = messages?.filter(
     (message) => message.id === id
   )[0];
