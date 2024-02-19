@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import MemberList from "components/MemberList";
-import { MEMBERS } from "common/member";
+import { MemberContext } from "context/MemberContext";
 import styled from "styled-components";
 import { COLORS } from "common/colors";
 
-function Member({ memberId, updateHandler }) {
+function Member() {
+  const { memberId, updateHandler, MEMBERS } = useContext(MemberContext);
   return (
     <StSection>
       <h2>MEMBER</h2>

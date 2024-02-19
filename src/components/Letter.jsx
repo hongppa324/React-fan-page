@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MEMBERS } from "common/member";
+import { MemberContext } from "context/MemberContext";
 import LetterCard from "components/LetterCard";
 import { COLORS } from "common/colors";
 import styled from "styled-components";
 
-function Letter({ memberId, messages }) {
+function Letter() {
+  const { memberId, messages } = useContext(MemberContext);
   const memberData = MEMBERS.filter(
     (member) => member.englishName === memberId
   )[0];

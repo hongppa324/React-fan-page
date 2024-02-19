@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import defaultImg from "assets/defaultUser.jpg";
-import { MEMBERS } from "common/member";
+import { MemberContext } from "context/MemberContext";
 import { v4 as uuid } from "uuid";
 import styled from "styled-components";
 import { COLORS } from "common/colors";
 
-function AddLetter({ memberId, addHandler }) {
+function AddLetter() {
+  const { memberId, addHandler, MEMBERS } = useContext(MemberContext);
   const member = MEMBERS.filter((member) => memberId === member.englishName)[0];
 
   const [message, setMessage] = useState({
