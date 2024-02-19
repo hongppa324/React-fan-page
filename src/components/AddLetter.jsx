@@ -6,8 +6,7 @@ import styled from "styled-components";
 import { COLORS } from "common/colors";
 
 function AddLetter() {
-  const { memberId, addHandler, MEMBERS } = useContext(MemberContext);
-  const member = MEMBERS.filter((member) => memberId === member.englishName)[0];
+  const { memberId, addHandler } = useContext(MemberContext);
 
   const [message, setMessage] = useState({
     nickname: "",
@@ -46,7 +45,7 @@ function AddLetter() {
       <form onSubmit={submitHandler}>
         <div>
           <img src={defaultImg} alt="" />
-          <span>To. {member.englishName}</span>
+          <span>To. {memberId}</span>
         </div>
         <NicknameInput
           type="text"

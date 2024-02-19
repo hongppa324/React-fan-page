@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "components/layout/Header";
-import Banner from "components/Banner";
+import Banner from "components/layout/Banner";
 import MemberTemplate from "components/MemberTemplate";
 import Footer from "components/layout/Footer";
 

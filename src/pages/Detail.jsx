@@ -11,7 +11,7 @@ export default function Detail() {
   return (
     <>
       <Header />
-      <DetailLetter id={id} messages={messages} setMessages={setMessages} />;
+      <DetailLetter id={id} messages={messages} setMessages={setMessages} />
     </>
   );
 }

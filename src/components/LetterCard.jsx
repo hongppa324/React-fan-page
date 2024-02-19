@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { timestampWindow } from "common/date";
 import styled from "styled-components";
 
-function LetterCard({ message, nickname, content, createdAt, id }) {
+function LetterCard({ nickname, content, createdAt, id }) {
   return (
     <Letter>
       <Link to={`detail/${id}`}>
