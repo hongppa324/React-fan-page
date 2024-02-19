@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MEMBERS } from "common/member";
 import LetterCard from "components/LetterCard";
 import { COLORS } from "common/colors";
