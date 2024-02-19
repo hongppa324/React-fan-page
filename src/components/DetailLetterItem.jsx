@@ -12,7 +12,7 @@ function DetailLetterItem({
   writedTo,
   isEdit,
   editContent,
-  id
+  id,
 }) {
   return (
     <DetailContainer>
@@ -24,7 +24,7 @@ function DetailLetterItem({
         <DetailImg>
           <img src={require(`assets/${writedTo}.jpg`)} alt="" />
         </DetailImg>
-        <DetailDesc>
+        <DetailCard>
           <div>
             <h3>닉네임</h3>
             <p>{nickname}</p>
@@ -38,12 +38,18 @@ function DetailLetterItem({
           </div>
           <div>
             {isEdit ? (
-              <textarea cols="30" rows="6" maxLength="100" value={editContent} onChange={changeContentHandler} />
+              <textarea
+                cols="30"
+                rows="6"
+                maxLength="100"
+                value={editContent}
+                onChange={changeContentHandler}
+              />
             ) : (
               <p>{content}</p>
             )}
           </div>
-        </DetailDesc>
+        </DetailCard>
       </DetailInfo>
       <DetailBtnBox>
         <DetailBtn onClick={editHandler} type={isEdit ? "edit" : "default"}>
@@ -63,7 +69,7 @@ export default DetailLetterItem;
 const TYPE = {
   edit: "#04AA6D",
   delete: "#f44336",
-  default: "#3498db"
+  default: "#3498db",
 };
 
 const DetailContainer = styled.div`
@@ -112,7 +118,7 @@ const DetailImg = styled.div`
   }
 `;
 
-const DetailDesc = styled.div`
+const DetailCard = styled.div`
   padding: 0 1rem;
   display: flex;
   flex-direction: column;

@@ -6,8 +6,7 @@ import { v4 as uuid } from "uuid";
 import styled from "styled-components";
 import { LettersContext } from "context/FanPageContext";
 
-function AddLetter() {
-  const { memberId, addHandler } = useContext(LettersContext);
+function AddLetter({ memberId, addHandler }) {
   const member = MEMBERS.filter((member) => memberId === member.englishName)[0];
 
   const [message, setMessage] = useState({

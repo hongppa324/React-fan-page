@@ -1,0 +1,26 @@
+local storage 있는 버젼
+fakeData 안 불러오는 버젼
+
+props-drilling OK => 기능 다 OK
+
+context OK => 글 작성, 수정, 삭제 다 됨.
+
+redux OK => 글 작성, 수정, 삭제 다 됨. reducer가 제대로 안 되어 있음. 
+
+context OK
+redux 로 리펙토링 먼저 진행해야 함. 
+
+1. fakeData : Letter.jsx에서 불러오기
+2. context branch : useContext 써서 리펙토링
+3. redux branch : reducer 다시 확인 
+
+
+(1) index.js => App.jsx, GlobalStyles.jsx
+(2) App.jsx => Router.jsx 
+(3) Router.jsx
+ state : messages 관리
+
+(4) AddForm
+ state : nickname, content 관리 
+
+ new message 원래 DetailLetter에서 정의 => AddForm으로 

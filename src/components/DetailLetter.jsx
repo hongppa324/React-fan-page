@@ -20,7 +20,7 @@ function DetailLetter() {
     }
 
     if (content === editContent) {
-      window.alert("변경 사항이 없습니다.");
+      window.alert("수정 사항이 없습니다.");
       setIsEdit((prev) => !prev);
       return;
     }
@@ -48,7 +48,7 @@ function DetailLetter() {
 
   const changeContentHandler = (event) => {
     if (event.target.value.length > 100) {
-      alert("over 100 초과하셨습니다");
+      alert("100자 이상을 초과하셨습니다");
       return;
     }
     setEditContent(event.target.value);

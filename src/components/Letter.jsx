@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import LetterItem from "components/LetterItem";
+import React from "react";
 import { MEMBERS } from "common/member";
+import LetterCard from "components/LetterCard";
 import { COLORS } from "common/colors";
 import styled from "styled-components";
 import { LettersContext } from "context/FanPageContext";
@@ -28,7 +28,7 @@ function Letter() {
       {filteredData?.map((item) => {
         const { nickname, content, writedTo, createdAt, id } = item;
         return (
-          <LetterItem
+          <LetterCard
             nickname={nickname}
             content={content}
             writedTo={writedTo}

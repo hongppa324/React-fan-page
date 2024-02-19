@@ -17,13 +17,9 @@ function MemberTemplate() {
 
   return (
     <>
-      <LettersContext.Provider
-        value={{ memberId, messages, updateHandler, addHandler }}
-      >
-        <Member />
-        <Letter />
-        <AddLetter />
-      </LettersContext.Provider>
+      <Member memberId={memberId} updateHandler={updateHandler} />
+      <Letter memberId={memberId} messages={messages} />
+      <AddLetter memberId={memberId} addHandler={addHandler} />
     </>
   );
 }

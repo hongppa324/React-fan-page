@@ -3,8 +3,7 @@ import { COLORS } from "common/colors";
 import styled from "styled-components";
 import { LettersContext } from "context/FanPageContext";
 
-function MemberList({ children: name, id }) {
-  const { memberId, updateHandler } = useContext(LettersContext);
+function MemberList({ children: name, id, clicked, updateHandler }) {
   const selectMember = () => updateHandler(id);
 
   return (
