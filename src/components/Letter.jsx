@@ -1,6 +1,6 @@
 import React from "react";
 import { MEMBERS } from "common/member";
-import LetterItem from "components/LetterItem";
+import LetterCard from "components/LetterCard";
 import { COLORS } from "common/colors";
 import styled from "styled-components";
 
@@ -26,7 +26,7 @@ function Letter({ memberId, messages }) {
       {filteredData?.map((item) => {
         const { nickname, content, writedTo, createdAt, id } = item;
         return (
-          <LetterItem
+          <LetterCard
             nickname={nickname}
             content={content}
             writedTo={writedTo}

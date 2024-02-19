@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid";
 import styled from "styled-components";
 import { COLORS } from "common/colors";
 
-function AddLetter({ memberId, handleAdd }) {
+function AddLetter({ memberId, addHandler }) {
   const member = MEMBERS.filter((member) => memberId === member.englishName)[0];
 
   const [message, setMessage] = useState({
@@ -26,7 +26,7 @@ function AddLetter({ memberId, handleAdd }) {
       return;
     }
 
-    handleAdd(message);
+    addHandler(message);
     setMessage({ nickname: "", content: "" });
   };
 

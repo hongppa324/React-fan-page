@@ -46,7 +46,7 @@ function DetailLetter({ id, messages, setMessages }) {
 
   const changeContentHandler = (event) => {
     if (event.target.value.length > 100) {
-      alert("over 100 초과하셨습니다");
+      alert("100자 이상을 초과하셨습니다");
       return;
     }
     setEditContent(event.target.value);

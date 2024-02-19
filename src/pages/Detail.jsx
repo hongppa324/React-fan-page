@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "components/Header";
+import Header from "components/layout/Header";
 import DetailLetter from "components/DetailLetter";
 import useLocalStorage from "common/useLocalStorage";
 import { useParams } from "react-router-dom";

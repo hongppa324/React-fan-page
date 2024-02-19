@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { timestampWindow } from "common/date";
 import styled from "styled-components";
 
-function LetterItem({ nickname, content, createdAt, id }) {
+function LetterCard({ message, nickname, content, createdAt, id }) {
   return (
     <Letter>
       <Link to={`detail/${id}`}>
@@ -25,7 +25,7 @@ function LetterItem({ nickname, content, createdAt, id }) {
     </Letter>
   );
 }
-export default LetterItem;
+export default LetterCard;
 
 const Letter = styled.div`
   margin-bottom: 20px;

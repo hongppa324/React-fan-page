@@ -1,12 +1,12 @@
-import React from 'react';
-import GlobalStyles from 'GlobalStyles';
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Router from "shared/Router";
 
 export default function App() {
   return (
     <>
-      <GlobalStyles />
       <Outlet />
+      <Router />
     </>
   );
 }
